@@ -11,6 +11,7 @@
     %header.header
       .header__title
         = link_to "TECH::BALLOON", root_path, class: "header__title--text"
+     
       .header__right
         - if user_signed_in?
           = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
@@ -21,6 +22,5 @@
           = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
     .contents
       = yield
-
 
 
