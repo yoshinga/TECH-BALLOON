@@ -1,12 +1,7 @@
-.chat-group-form__field--left
-  %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} 投稿検索
-  .chat-group-form__field--right
-    .chat-group-form__search.clearfix
-      %input#user-search-field.chat-group-form__input{:placeholder => "search post", :type => "text"}/
-    #user-search-result
+= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+  = form.text_field :keyword, placeholder: "検索", class: "search-input"
+  = form.submit "検索", class: "search-btn"
 
-- @posts.each do |post|
-  = render partial: "post", locals: { post: post}
-  
-
-  
+.contents.row
+  - @posts.each do |post|
+    = render partial: "post", locals: { post: post}

@@ -1,0 +1,27 @@
+$(function() {
+
+var search_list = $(".contents.row");
+
+function appendTweet(tweet) {
+var current_user = tweet.user_sign_in  tweet.user_sign_in.id == tweet.user_id ?
+`
+%li
+  %a{"data-method" => "get", :href => "/tweets/${tweet.id}/edit"} &#x7DE8;&#x96C6;
+= succeed "`" do
+  %li
+    %a{"data-method" => "delete", :href => "/tweets/${tweet.id}"} &#x524A;&#x9664;
+.content_post{:style => "background-image: url(${tweet.image});"}
+  .more
+    %span
+      %img{:src => "/assets/arrow_top.png"}/
+      %ul.more_list
+        %li
+          %a{"data-method" => "get", :href => "/tweets/${tweet.id}"} &#x8A73;&#x7D30;
+        ${current_user}
+    %p ${tweet.text}
+    = succeed "`" do
+      %br
+        %span.name
+          %a{:href => "/users/${tweet.user_id}"}
+            %span> &#x6295;&#x7A3F;&#x8005;
+            ${tweet.nickname}
