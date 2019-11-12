@@ -11,6 +11,11 @@
     %header.header
       .header__title
         = link_to "TECH::BALLOON", root_path, class: "header__title--text"
+      .search
+        = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "検索", class: "search-input"
+          = form.submit "検索", class: "search-btn"
+
       .header__right
         - if user_signed_in?
           = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
