@@ -10,6 +10,8 @@
     = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
 .postText
   = simple_format @post.content
+.book_mark
+  = link_to 'ブックマークに追加', '#'
 
 .container
   - if current_user
