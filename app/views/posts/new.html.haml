@@ -2,6 +2,6 @@
   create at .
 
 = form_with model: @post, class: :form, local: true do |form|
-  = form.text_field :title, placeholder: :カリキュラムのurlの最後の数字4桁とタイトル, class: :form__title
-  = form.text_area :content, placeholder: :できるだけ他人にわかりやすく書く, class: :form__text
+  = form.text_field :title, placeholder: :カリキュラムのurlの最後の数字とタイトル, class: :form__title
+  = form.text_area :content, placeholder: :'what,Why,Howに沿ってかく', class: :form__text
   = form.submit '投稿する', class: :form__btn

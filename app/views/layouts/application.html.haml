@@ -4,7 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title TECH::BALLOON
     = csrf_meta_tags
-    = csp_meta_tag
+    = csp_meta_tag  
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
@@ -12,10 +12,9 @@
       .header__title
         = link_to "TECH::BALLOON", root_path, class: "header__title--text"
       - if root_path == request.path
-        .search
+        .header__search
           = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
-            = form.text_field :keyword, placeholder: "検索", class: "search-input"
-            = form.submit "検索", class: "search-btn"
+            = form.text_field :keyword, placeholder: "✏︎✏︎✏︎ 検索 ✏✏︎✏︎", class: "search-input"
       .header__right
         - if user_signed_in?
           = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
@@ -26,5 +25,3 @@
           = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
     .contents
       = yield
-
-

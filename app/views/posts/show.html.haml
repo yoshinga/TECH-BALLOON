@@ -10,14 +10,8 @@
     = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
 .postText
   = simple_format @post.content
-.book_mark
-  = link_to 'ブックマークに追加', '#'
 
-.container
-  - if current_user
-    = form_with model: [@post, @comment], local: true do |form| 
-      = form.text_area :comment, placeholder: "コメントする" , rows: "2" 
-      = form.submit "SEND"
+  
 .comment
   .comments
     - if @comments
@@ -25,3 +19,9 @@
         %p
           = link_to comment.user.nickname, "/users/#{comment.user_id}"
           = comment.comment
+    .container
+      - if current_user
+        = form_with model: [@post, @comment], local: true do |form| 
+          = form.text_area :comment, placeholder: "コメントする" , rows: "2" 
+          = form.submit "SEND"
+    
