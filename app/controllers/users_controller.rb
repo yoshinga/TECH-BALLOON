@@ -4,6 +4,5 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
     @favposts = @user.favposts
-    # counts(@user)
   end
 end

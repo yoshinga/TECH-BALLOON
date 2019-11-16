@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
-  
     @post = Post.new
   end
   
@@ -37,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   def search  
-    
     @posts = Post.search(params[:keyword])
     respond_to do |format|
       format.json 
