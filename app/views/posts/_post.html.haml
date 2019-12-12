@@ -10,4 +10,11 @@
       .content__right__bottom--date
         = post.created_at
 
-    
+        - if root_path == request.path && current_user.favpost?(post)
+          = form_for(current_user.favorites.find_by(post_id: post.id), html: { method: :delete }) do |f|
+            = hidden_field_tag :post_id, post.id
+            = f.submit 'ブックマーク解除', class: 'btn btn-danger'
+        - else
+          = form_for(current_user.favorites.build) do |f|
+            = hidden_field_tag :post_id, post.id
+            = f.submit 'ブックマーク登録', class: 'btn btn-primary'

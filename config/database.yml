@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: TECH::BALLOON_production
-  username: TECH::BALLOON
-  password: <%= ENV['TECH::BALLOON_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

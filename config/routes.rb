@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   get 'favorites/create'
   get 'favorites/destroy'
   get 'comments/new'

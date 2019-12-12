@@ -1,7 +1,6 @@
 body{
   overflow: scroll;
   font-family: 'arial unicode ms';
-  // background-color: #f6f6f6;
   min-width: 650px;
   height: 100vh;
   .header{
@@ -46,7 +45,6 @@ body{
     &__right{
       margin-right: 30px;
       width: 400px;
-      // display: inline-block;
       &--btn{
         text-decoration: none;
         line-height: 70px;
@@ -58,8 +56,6 @@ body{
   .contents{
     margin: 0 auto 0;
     padding-top: 50px;
-
-    // background-color: #fff;
     height: calc(100% - 100px); 
     width: 70%;
     .content.row{
@@ -134,19 +130,23 @@ body{
       &__edit{
         display: block;
         border-radius: 5px;
-        color: black;
-        background-color:#999;
+        color: #999;
+        // background-color:#999;
         padding: 0 10px;
-        text-decoration: none;
+        // text-decoration: none;
         margin-right: 10px;
       }
       &__delete{
         display: block;
         border-radius: 5px;
-        color: black;
-        background-color:#999;
+        color: #999;
         padding: 0 10px;
-        text-decoration: none;
+        margin-left: 10px;
+      }
+      &__back{
+        border-radius: 5px;
+        color: #999;
+        padding: 0 10px;
         margin-left: 10px;
       }
     }
@@ -182,7 +182,6 @@ body{
 }
 
 .comment{
-  // display:inline;
   margin-left: 20%;
   .comments{
     #comment_comment{
@@ -192,3 +191,30 @@ body{
   }
 
 }
+
+body {
+    font-family: verdana, arial, helvetica, sans-serif;
+  
+  }
+  
+  p, ol, ul, td {
+    font-family: 'arial unicode ms';
+    font-size: 16px;
+  }
+  a {
+    &:visited {
+      color: #666;
+    }
+  
+    &:hover {
+      color: #fff;
+      background-color:rgb(240, 240, 240);
+    }
+  }
+  
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 14px;
+  }
+     
