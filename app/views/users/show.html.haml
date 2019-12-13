@@ -3,8 +3,9 @@
   さんの投稿一覧
 - @posts.each do |post|
   =render partial: "posts/post", locals: { post: post}
-
-ブックマーク一覧
+.postTitle
+  = @user.nickname
+  さんのブックマーク一覧
 .row
 - @favposts.each do |post|
   =render partial: "posts/favpost", locals: { post: post}
