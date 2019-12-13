@@ -182,6 +182,7 @@ body{
 }
 
 .comment{
+  margin-top: 50px;
   margin-left: 20%;
   .comments{
     #comment_comment{
@@ -199,7 +200,7 @@ body {
   
   p, ol, ul, td {
     font-family: 'arial unicode ms';
-    font-size: 16px;
+    font-size: 20px;
   }
   a {
     &:visited {

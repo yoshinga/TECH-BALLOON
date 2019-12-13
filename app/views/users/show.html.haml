@@ -4,8 +4,7 @@
 - @posts.each do |post|
   =render partial: "posts/post", locals: { post: post}
 .postTitle
-  = @user.nickname
-  さんのブックマーク一覧
+  ブックマーク一覧
 .row
 - @favposts.each do |post|
   =render partial: "posts/favpost", locals: { post: post}
