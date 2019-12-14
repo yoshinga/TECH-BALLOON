@@ -4,18 +4,16 @@
   function buildHTML(content){
     var html = `
     <div class="content">
-      <div class="content__left">
-        <div class="content__left--image"></div>
       </div>
       <div class="content__right">
         <div class="content__right__top">
-          <a class="content__right__top--title" href="/posts/${content.id}">${content.title}</a>
+          <a class="content__right__top__title" href="/posts/${content.id}">${content.title}</a>
         </div>
         <div class="content__right__bottom">
-          <div class="content__right__bottom--userName">
-            <a class="content__right__bottom--userName--btn" href="/users/${content.user}">${content.name}</a>
+          <div class="content__right__bottom__userName">
+            <a class="content__right__bottom__userName__btn" href="/users/${content.user}">${content.name}</a>
           </div>
-          <div class="content__right__bottom--date">
+          <div class="content__right__bottom__date">
             ${content.date}
           </div>
         </div>
@@ -27,7 +25,7 @@
   }
 
   function appendErrMsgToHTML(msg) {
-    var html = `<a class="content__right__bottom--userName--btn">${msg}</a>`
+    var html = `<a class="content__right__bottom__userName__btn">${msg}</a>`
     search_list.append(html);
   }
 

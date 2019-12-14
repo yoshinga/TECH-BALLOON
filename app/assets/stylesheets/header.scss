@@ -1,0 +1,103 @@
+.header{
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color:white;
+  color: black;
+  display: flex;
+  &__title{
+    font-size: 25px;
+    line-height: 70px;
+    transform :scale(0.7, 1.0); 
+    font-weight: normal;
+    font-family: 'Courier New';
+    margin-left: 50px;
+    .red_font{
+      color: red;
+    }
+    &__text{
+      text-decoration: none;
+      color: black;
+      margin-left: 80px;
+    }
+  }
+  &__search{
+    line-height: 70px;
+    margin: 0 auto;
+    .search-form{
+      .search-input{
+        border-radius: 15px;
+        border: 1px #bbb solid;
+        font-size: 11px;
+        height: 25px;
+        width: 170px;
+        padding-left: 30px;
+      }
+      
+    }
+  }
+  &__right{
+    margin-right: 30px;
+    &__btn{
+      text-decoration: none;
+      line-height: 70px;
+      color: black;
+      margin-left:15px;
+    }
+  }
+}
+.contents{ 
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  background-color: #fff;
+  width: 70%;
+  .content.row{
+    height: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    margin-right: 0px;
+  }
+  .content{
+    padding: 10px;
+    border-bottom: 1px solid #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+      padding-right: 20px;
+      &__image{
+        height: 55px;
+        width: 55px;
+        border: solid 1px;
+        border-radius: 30px;
+
+      }
+    }
+    &__right{
+      width: calc(100%-100px);
+      &__top{
+        font-size: 20px;
+        font-weight: bold;
+        &__title{
+          text-decoration: none;
+          color: #000000;
+        }
+      }
+      &__bottom{
+        font-size: 15px;
+        color: #999;
+        display: flex;
+        &__userName{
+          &__btn{
+            text-decoration: none;
+            color: #999;
+          }
+        }
+        &__date{
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.form{
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+  &__title{
+    display: block;
+    width: 100%;
+    height: 50px;
+  }
+  &__text{
+    display: block;
+    width: 100%;
+    height: 50%;
+    margin-top: 15px;
+  }
+  &__btn{
+    display: block;
+    width: 30%;
+    margin: 15px auto 0;
+  }
+}
