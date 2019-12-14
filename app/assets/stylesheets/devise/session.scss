@@ -1,8 +1,14 @@
 .content-session{
-  width: 1000px;
-  height: 1000px;
+  background-color: #f2f2f2;
+  margin: 0 20%;
+  margin-top: 50px;
+  padding: 30px 180px 50px;
+  h2{
+    margin:0 30%;
+  }
   .new_user{
     .field{
+      margin: 20px;
     }
   }
 }

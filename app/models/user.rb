@@ -20,4 +20,7 @@ class User < ApplicationRecord
   def  favpost?(post)
     self.favposts.include?(post)
   end
+  def remember_me
+    true
+  end
 end
