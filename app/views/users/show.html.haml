@@ -11,7 +11,7 @@
           .content__right__bottom__userName
             = link_to post.user.nickname, user_path(post.user), class: "content__right__bottom__userName__btn"
           .content__right__bottom__date
-            = date_format(post.created_at)
+            -# = date_format(post.created_at)
             = post.created_at.to_s(:datetime)
   .postTitle
     ブックマーク一覧
