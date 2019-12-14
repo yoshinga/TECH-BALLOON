@@ -1,33 +1,27 @@
-.postTitle
-  = @post.title
-.postDate
-  = @post.created_at
-.postAuthor
-- if user_signed_in? && current_user.id == @post.user_id
+.content-posts
+  .postTitle
+    = @post.title
+  .postDate
+    = @post.created_at.to_s(:datetime)
+  .postAuthor
+  - if user_signed_in? && current_user.id == @post.user_id
+    .postManage
+      = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
+      = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
+  .postMarkDown
+    = markdown(@post.content).html_safe
 
-  .postManage
-    = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
-    = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
-  .postText
-    %p#notice= notice
-  %p
-    %strong Title:
-    = @post.content
-  %p
-.postMarkDown
-  = markdown(@post.content).html_safe
+  .comment
+    .comments
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            = comment.comment
+      .container
+        - if current_user
+          = form_with model: [@post, @comment], local: true do |form| 
+            = form.text_area :comment, placeholder: "コメントする" , rows: "2" 
+            = form.submit "SEND" , class: "comment-button"
 
-.comment
-  .comments
-    - if @comments
-      - @comments.each do |comment|
-        %p
-          = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          = comment.comment
-    .container
-      - if current_user
-        = form_with model: [@post, @comment], local: true do |form| 
-          = form.text_area :comment, placeholder: "コメントする" , rows: "2" 
-          = form.submit "SEND"
-
-= link_to '戻る', root_path,class: "postManage__back"
+  = link_to '戻る', root_path,class: "postManage__back"

@@ -1,10 +1,20 @@
-.postTitle
-  = @user.nickname
-  さんの投稿一覧
-- @posts.each do |post|
-  =render partial: "posts/post", locals: { post: post}
-.postTitle
-  ブックマーク一覧
-.row
-- @favposts.each do |post|
-  =render partial: "posts/favpost", locals: { post: post}
+.content-posts
+  .postTitle
+    = @user.nickname
+    さんの投稿一覧
+  - @posts.each do |post|
+    .content
+      .content__right
+        .content__right__top
+          = link_to post.title, post_path(post.id), class: 'content__right__top__title'
+        .content__right__bottom
+          .content__right__bottom__userName
+            = link_to post.user.nickname, user_path(post.user), class: "content__right__bottom__userName__btn"
+          .content__right__bottom__date
+            = date_format(post.created_at)
+            = post.created_at.to_s(:datetime)
+  .postTitle
+    ブックマーク一覧
+  .row
+  - @favposts.each do |post|
+    =render partial: "posts/favpost", locals: { post: post}

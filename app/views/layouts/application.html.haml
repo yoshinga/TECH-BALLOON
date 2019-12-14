@@ -10,18 +10,20 @@
   %body
     %header.header
       .header__title
-        = link_to "TECH::BALLOON", root_path, class: "header__title--text"
+        = link_to "TECH::BALLOON", root_path, class: "header__title__text"
       - if root_path == request.path
         .header__search
           = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
-            = form.text_field :keyword, placeholder: "✏︎✏︎✏︎ 検索 ✏✏︎✏︎", class: "search-input"
+            = form.text_field :keyword, placeholder: " 検索する ", class: "search-input"
+      - else
+        .header__search
       .header__right
         - if user_signed_in?
-          = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
-          = link_to "新規投稿", new_post_path, class: "header__right--btn"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+          = link_to current_user.nickname, user_path(current_user), class: "header__right__btn"
+          = link_to "新規投稿", new_post_path, class: "header__right__btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__btn"
         - else
-          = link_to "ログイン", new_user_session_path, class: "header__right--btn"
-          = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+          = link_to "ログイン", new_user_session_path, class: "header__right__btn"
+          = link_to "新規登録", new_user_registration_path, class: "header__right__btn"
     .contents
       = yield
