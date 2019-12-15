@@ -1,24 +1,19 @@
-# README
+# Name
+## TECH::BALLOON
+# Overview
+このアプリケーションはプログラミングスクールの学生をターゲットにしたとてもローカルなコミュニティーを支えるための専用のアプリケーションです。
+# Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# なぜ作ったのか
+私はあるとき、わからないところをメンターに聞よりも、私よりも少しだけ知識がある人、同じ教材を少しだけ先に進めていた人に聞く説明の方が理解しやすいと言うことに気付きました。
+そこで思いついたのが学生の間のみで共有する専用のアプリケーションを作ると言うことです。このアプリケーションは飛び立とうとする人を支援するアプリケーション**"TECH::BALLOON"**と名付けました。
+また、プログラミングスクールの教材を生徒たちがさらにより良いものにしていくことができる為、学びながらスクールに大切なものを残していくと言うとても面白い構造が出来上がると思ったのです。
+# function
+コメント機能
+マークダウンに対応したポスト機能
+ブックマーク機能
+検索機能
+facebook,googleのアカウントを使った新規登録ログイン
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# how to use
+# DB設計
