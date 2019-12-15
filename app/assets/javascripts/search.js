@@ -18,7 +18,8 @@
           </div>
         </div>
       </div>
-    </div> `;
+    </div> 
+    `;
 
      search_list.append(html);
 
