@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :articles
   get 'favorites/create'
   get 'favorites/destroy'
   get 'comments/new'
-  devise_for :users
-  root  to: 'posts#index'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  root to: 'posts#index'
   resources :users, only: :show do
     member do
       get :likes

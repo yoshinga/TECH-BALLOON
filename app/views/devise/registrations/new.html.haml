@@ -24,3 +24,5 @@
     .actions
       = f.submit "Sign up"
   = render "devise/shared/links"
+  = link_to user_facebook_omniauth_authorize_path, class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--facebook" do
+    Facebookで登録する
