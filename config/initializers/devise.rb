@@ -13,10 +13,10 @@ Devise.setup do |config|
 
 
   case Rails.env
-    when 'production'
+    when 'development'
       config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
       config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "http://localhost:3000//users/auth/google_oauth2/callback"
-    when 'development'
+    when 'production'
       config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "https://tech-balloon.herokuapp.com/users/auth/facebook/callback"
       config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "https://tech-balloon.herokuapp.com/users/auth/google_oauth2/callback"
     end
