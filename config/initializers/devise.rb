@@ -3,7 +3,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "https://tech-balloon.herokuapp.com/users/auth/facebook/callback"
   # config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
   # config.omniauth :google_oauth2, ENV["GOOGLE_ID_PRODUCTION"], ENV["GOOGLE_SECRET_PRODUCTION"], scope: 'email', callback_uri: "http://localhost:3000/users/auth/google_oauth2/callback"
   # config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "https://tech-balloon.herokuapp.com//users/auth/facebook/callback"
@@ -13,14 +12,16 @@ Devise.setup do |config|
   # callback_url: 'https://tech-balloon.herokuapp.com/users/auth/facebook/callback' 
 
 
-  # case Rails.env
-  #   when 'development'
-  #     config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
-  #     config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "http://localhost:3000//users/auth/google_oauth2/callback"
-  #   when 'production'
-  #     config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "https://tech-balloon.herokuapp.com/users/auth/facebook/callback"
-  #     config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "https://tech-balloon.herokuapp.com/users/auth/google_oauth2/callback"
-  #   end
+  case Rails.env
+    when 'development'
+      config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
+      config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "http://localhost:3000//users/auth/google_oauth2/callback"
+    when 'production'
+      config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', info_fields: 'email', callback_url: "https://tech-balloon.herokuapp.com/users/auth/facebook/callback"
+      config.omniauth :google_oauth2, ENV['GOOGLE_ID_PRODUCTION'], ENV['GOOGLE_SECRET_PRODUCTION'], scope: 'email', redirect_uri: "https://tech-balloon.herokuapp.com/users/auth/google_oauth2/callback"
+      # config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', callback_url: "https://tech-balloon.herokuapp.com/users/auth/facebook/callback"
+    end
+    # config.omniauth :facebook, ENV['FACEBOOK_ID_PRODUCTION'], ENV['FACEBOOK_SECRET_PRODUCTION'], scope: 'email', info_fields: 'email', callback_url: "https://hogehoge.herokuapp.com/users/auth/facebook/callback"
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
