@@ -2,7 +2,7 @@
 # Link
 https://tech-balloon.herokuapp.com/
 # Demo
-https://raw.github.com/wiki/yoshinga/TECH-BALLOON.wiki/images/tech-balloon.gif
+![tech-balloon](https://user-images.githubusercontent.com/56761190/71088476-d8fc6800-21e1-11ea-9469-bbaa45f620d6.gif)
 # Overview
 このアプリケーションはプログラミングスクールの学生をターゲットにしたとてもローカルなコミュニティーツールです。
 # Description
