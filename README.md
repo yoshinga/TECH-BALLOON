@@ -79,7 +79,7 @@ facebook,googleのアカウントとemailの３パターンでログインする
 - belongs_to :post
 - belongs_to :user
 
-# Sns_credentialテーブル
+## sns_credentialsテーブル
 |name|Type|Options|
 |------|----|-------|
 |provider|string|null: false|
